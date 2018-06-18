@@ -1,0 +1,8 @@
+---
+- name: Install NGINX and set up a basic configuration
+  hosts: all
+  remote_user: root
+
+  roles:
+    - common
+    - nginx
