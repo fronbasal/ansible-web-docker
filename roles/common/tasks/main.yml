@@ -16,3 +16,6 @@
 
 - name: Enable and start firewalld
   service: name=firewalld state=started enabled=yes
+
+- name: Install vim
+  yum: name=vim state=present
