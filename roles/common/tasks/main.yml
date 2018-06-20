@@ -19,3 +19,6 @@
 
 - name: Install vim
   yum: name=vim state=present
+
+- name: Install htop
+  yum: name=htop state=present
