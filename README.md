@@ -1,4 +1,4 @@
-# Beta Ansible
+# Ansible common configuration for the Beta e.G.
 
 This is a common configuration for webservers and reverse proxies. Use intended for RHEL (CentOS (7)).
 
