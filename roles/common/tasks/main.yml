@@ -22,3 +22,7 @@
 
 - name: Install htop
   yum: name=htop state=present
+
+- name: Secure SSHD
+  template: src=sshd_config dest=/etc/ssh/sshd_config
+  notify: restart sshd
