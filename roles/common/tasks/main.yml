@@ -26,3 +26,9 @@
 - name: Secure SSHD
   template: src=sshd_config dest=/etc/ssh/sshd_config
   notify: restart sshd
+
+- name: Make shell beautiful
+  lineinfile:
+    dest: /root/.bashrc
+    owner: root
+    line: 'export PS1="\[\033[38;5;33m\][\[$(tput sgr0)\]\[\033[38;5;4m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;39m\]\u\[$(tput sgr0)\]\[\033[38;5;42m\]@\[$(tput sgr0)\]\[\033[38;5;41m\]\h\[$(tput sgr0)\]\[\033[38;5;14m\]:\[$(tput sgr0)\]\[\033[38;5;61m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;151m\]\\$\[$(tput sgr0)\]\[\033[38;5;33m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"'
