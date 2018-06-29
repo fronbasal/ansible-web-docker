@@ -27,6 +27,9 @@
   template: src=sshd_config dest=/etc/ssh/sshd_config
   notify: restart sshd
 
+- name: Install certbot
+  yum: name=python2-certbot-nginx state=present
+
 - name: Make shell beautiful
   lineinfile:
     dest: /root/.bashrc
