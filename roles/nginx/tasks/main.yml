@@ -10,8 +10,12 @@
   template: src=default.conf dest=/etc/nginx/conf.d/default.conf
   notify: restart nginx
 
-- name: Create firewall rule for NGINX
+- name: Create HTTP firewall rule
   firewalld: service=http permanent=true state=enabled immediate=yes
+  ignore_errors: yes
+
+- name: Create HTTPS firewall rule
+  firewalld: service=https permanent=true state=enabled immediate=yes
   ignore_errors: yes
 
 - name: Enable and start NGINX
