@@ -2,8 +2,34 @@
 - name: Install NGINX and set up a basic configuration
   hosts: all
   remote_user: root
-
   roles:
     - common
-    - nginx
-    - docker
+    - nginxinc.nginx
+    - geerlingguy.docker
+    - geerlingguy.certbot
+    - certbot_packages
+  vars:
+      nginx_debug_output: true
+      nginx_configure: false
+      nginx_logrotate_conf_enable: true
+      nginx_logrotate_conf:
+        paths:
+          - "/var/log/nginx/*.log"
+        options:
+          - daily
+          - missingok
+          - rotate 14
+          - compress
+          - delaycompress
+          - notifempty
+          - sharedscripts
+      docker_edition: 'ce'
+      docker_package_state: present
+      docker_service_enabled: true
+      docker_restart_handler_state: restarted
+      docker_install_compose: true
+      docker_compose_path: /usr/bin/docker-compose
+      certbot_create_standalone_stop_services:
+        - nginx
+      certbot_auto_renew: false
+      certbot_create_if_missing: false

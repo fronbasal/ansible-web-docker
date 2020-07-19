@@ -1,0 +1,7 @@
+---
+- name: Install NGINX plugin for certbot
+  apt:
+    pkg:
+      - "software-properties-common"
+      - "python3-certbot-nginx"
+    update_cache: true

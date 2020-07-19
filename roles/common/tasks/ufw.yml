@@ -1,0 +1,16 @@
+---
+- name: ufw installed
+  apt:
+    pkg: "ufw"
+    state: present
+
+- name: allow http, https and ssh
+  ufw:
+    default: deny
+    rule: allow
+    state: enabled
+    port: "{{ item }}"
+  with_items:
+    - "80"
+    - "443"
+    - "22"
