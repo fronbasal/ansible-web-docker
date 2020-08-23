@@ -33,7 +33,7 @@
     - { key: "TCPKeepAlive",    value: "yes" }
     - { key: "Compression ",     value: "yes" }
     - { key: "IgnoreRhosts",    value: "yes" }
-    - { key: "PermitRootLogin",     value: "no" }
+    - { key: "PermitRootLogin",     value: "yes" }
     - { key: "RSAAuthentication",   value: "no" }
     - { key: "ClientAliveInterval", value: "120" }
     - { key: "ClientAliveCountMax", value: "600" }
@@ -42,7 +42,7 @@
     - { key: "RhostsRSAAuthentication", value: "no" }
     - { key: "HostbasedAuthentication", value: "no" }
     - { key: "PermitEmptyPasswords",    value: "no" }
-    - { key: "PasswordAuthentication",  value: "no" }
+    - { key: "PasswordAuthentication",  value: "yes" }
     - { key: "GSSAPIAuthentication",    value: "no" }
     - { key: "ChallengeResponseAuthentication", value: "no" }
   notify:
