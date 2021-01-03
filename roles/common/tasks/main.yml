@@ -33,7 +33,7 @@
       - "zlib1g"
       - "libcurl4-openssl-dev"
       - "fish"
-    state: present
+    state: latest
     update_cache: true
 
 - name: root user uses fish shell
